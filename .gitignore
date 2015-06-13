@@ -29,3 +29,4 @@ node_modules
 # Other
 *.iml
 .idea/
+*.solution.html
