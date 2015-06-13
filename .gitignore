@@ -30,3 +30,5 @@ node_modules
 *.iml
 .idea/
 *.solution.html
+*.solution.js
+*.solution.css
