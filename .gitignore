@@ -32,3 +32,4 @@ node_modules
 *.solution.html
 *.solution.js
 *.solution.css
+.DS_Store
