@@ -1,0 +1,27 @@
+.badge {
+  width: 100%;
+  border-radius: 10px;
+  border: 3px solid crimson;
+  background: crimson;
+  height: 350px;
+}
+.badge-header {
+  width: 100%;
+  padding: 20px 0;
+}
+.badge-header h1, .badge-header h2 {
+  color: white;
+  text-align: center;
+  margin: 0;
+  font-family: Arial;
+}
+.badge-content h3 {
+  text-align: center;
+  margin: 0;
+  font-family: cursive;
+  font-size: 5em;
+}
+.badge-content {
+  height: 200px;
+  background: white;
+}
