@@ -9,7 +9,8 @@
     <link href="vendor/bootstrap.min.css" rel="stylesheet">
 
     <link href="vendor/docs.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+    <link rel="import" href="components/very-cool-hello-badge/index.html"/>
     <style>.navbar-brand { font-size: 250%; line-height: 1.2; margin: 20px 0; }</style>
 
 </head>
@@ -40,13 +41,17 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam amet culpa dolores hic itaque magni minima minus mollitia nemo nulla numquam odit provident, quidem ratione rem tempora ullam vitae.</p>
                 </div>
                 <!-- Component title -->
-                <h2 id="first-component">First Component</h2>
+
+                <h2 id="very-cool-hello-badge">Very Cool Hello Badge</h2>
                 <!-- Component description -->
-                <p>Notes about the.</p>
+                <p>This is a basic hello world badge, in web components!</p>
+                <style>
+                    very-cool-hello-badge h3 { color: lightcoral !important; }
+                </style>
                 <!-- Component code -->
-                <h3 style="color: red;">Hello world.</h3>
+                <very-cool-hello-badge><h3>World!</h3></very-cool-hello-badge>
                 <!-- Component code example -->
-                <div class="highlight"><code class="html"><h3 style="color: red;">Hello world.</h3></code></div>
+                <div class="highlight"><code class="html"><very-cool-hello-badge><h3>World!</h3></very-cool-hello-badge></code></div>
 
                 <!-- Component title -->
                 <h2 id="second-component">Second Component</h2>
@@ -69,7 +74,7 @@
                     <li class="">
                         <a href="#first-component-group">Component Group</a>
                         <ul class="nav">
-                            <li class=""><a href="#first-component">First Component</a></li>
+                            <li class=""><a href="#very-cool-hello-badge">Very Cool Hello Badge</a></li>
                             <li class=""><a href="#second-component">Second Component</a></li>
                         </ul>
                     </li>
@@ -91,7 +96,7 @@
 
     </div>
 </footer>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
 <script>
 
 function escapeHtml(str) {
