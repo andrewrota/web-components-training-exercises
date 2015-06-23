@@ -71,6 +71,39 @@
                 <!-- Component code example -->
                 <div class="highlight"><code class="html"><div class="my_button">Button!</div></code></div>
 
+                <!-- Slider Component -->
+
+                <h2 id="slider">Slider</h2>
+                <!-- Component code -->
+                <div class="my_slider">
+                    <h1>Heading!</h1>
+                    <img style="display: none" src="images/fresno1.png" alt="Fresno, CA"/>
+                    <img style="display: none" src="images/fresno2.JPG" alt="Fresno, CA"/>
+                    <img style="display: none" src="images/fresno3.JPG" alt="Fresno, CA"/>
+                </div>
+
+                <script>
+                    var sliderHost = document.querySelector('.my_slider');
+                    var shadowRoot = sliderHost.createShadowRoot();
+                    var images = sliderHost.querySelectorAll('img');
+                    var imageCounter = 0;
+                    shadowRoot.innerHTML += '<content select="h1"></content>';
+                    shadowRoot.innerHTML += '<content select="img"></content>';
+                    shadowRoot.innerHTML += '<style>::content img {width: 200px;}</style>';
+                    window.setInterval(function() {
+                        images[imageCounter].style.display = 'none';
+                        if(imageCounter < images.length -1) {
+                            imageCounter++;
+                        } else {
+                            imageCounter = 0;
+                        }
+                        images[imageCounter].style.display = 'block';
+                    }, 500);
+                </script>
+
+                <!-- Component code example -->
+                <div class="highlight"><code class="html"><div class="my_slider">Slider!</div></code></div>
+
             </div>
         </div>
 
@@ -79,13 +112,9 @@
                 <ul class="nav bs-docs-sidenav">
 
 
-                    <li class="">
-                        <a href="#first-component-group">Basic Components</a>
-                        <ul class="nav">
-                            <li class=""><a href="#very-cool-hello-badge">Very Cool Hello Badge</a></li>
-                            <li class=""><a href="#button">Button</a></li>
-                        </ul>
-                    </li>
+                    <li class=""><a href="#very-cool-hello-badge">Very Cool Hello Badge</a></li>
+                    <li class=""><a href="#button">Button</a></li>
+                    <li class=""><a href="#slider">Slider</a></li>
                 </ul>
 
             </nav>
