@@ -54,14 +54,22 @@
                 <div class="highlight"><code class="html"><very-cool-hello-badge><h3>World!</h3></very-cool-hello-badge></code></div>
 
                 <!-- Component title -->
-                <h2 id="second-component">Second Component</h2>
-                <!-- Component description -->
-                <p>Lorem ipsum.</p>
+                <h2 id="button">Button</h2>
                 <!-- Component code -->
-                <h3 style="color: blue;">Hello again.</h3>
-                <!-- Component code example -->
-                <div class="highlight"><code class="html"><h3 style="color: blue;">Hello again.</h3></code></div>
+                <div class="my_button">Button!</div>
 
+                <script>
+                    var buttonHost = document.querySelector('.my_button');
+                    var shadowRoot = buttonHost.createShadowRoot();
+                    shadowRoot.innerHTML = '<style>button { padding: 10px 20px; border: 1px solid lightblue; background: white;  font-family: "Arial"} button:active { background: #eee;;}</style>';
+                    var buttonNode = document.createElement('button');
+                    buttonNode.innerHTML += '<content></content>';
+                    shadowRoot.appendChild(buttonNode);
+
+                </script>
+
+                <!-- Component code example -->
+                <div class="highlight"><code class="html"><div class="my_button">Button!</div></code></div>
 
             </div>
         </div>
@@ -72,10 +80,10 @@
 
 
                     <li class="">
-                        <a href="#first-component-group">Component Group</a>
+                        <a href="#first-component-group">Basic Components</a>
                         <ul class="nav">
                             <li class=""><a href="#very-cool-hello-badge">Very Cool Hello Badge</a></li>
-                            <li class=""><a href="#second-component">Second Component</a></li>
+                            <li class=""><a href="#button">Button</a></li>
                         </ul>
                     </li>
                 </ul>
