@@ -10,6 +10,7 @@
         <link href="vendor/docs.min.css" rel="stylesheet">
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
         <link rel="import" href="components/my-button/index.html"/>
+        <link rel="import" href="components/my-slider/index.html"/>
 
     <link rel="import" href="components/very-cool-hello-badge/index.html"/>
     <style>.navbar-brand { font-size: 250%; line-height: 1.2; margin: 20px 0; }</style>
@@ -67,34 +68,18 @@
 
                 <h2 id="slider">Slider</h2>
                 <!-- Component code -->
-                <div class="my_slider">
-                    <h1>Heading!</h1>
-                    <img style="display: none" src="images/fresno1.png" alt="Fresno, CA"/>
-                    <img style="display: none" src="images/fresno2.JPG" alt="Fresno, CA"/>
-                    <img style="display: none" src="images/fresno3.JPG" alt="Fresno, CA"/>
-                </div>
-
-                <script>
-                    var sliderHost = document.querySelector('.my_slider');
-                    var shadowRoot = sliderHost.createShadowRoot();
-                    var images = sliderHost.querySelectorAll('img');
-                    var imageCounter = 0;
-                    shadowRoot.innerHTML += '<content select="h1"></content>';
-                    shadowRoot.innerHTML += '<content select="img"></content>';
-                    shadowRoot.innerHTML += '<style>::content img {width: 200px;}</style>';
-                    window.setInterval(function() {
-                        images[imageCounter].style.display = 'none';
-                        if(imageCounter < images.length -1) {
-                            imageCounter++;
-                        } else {
-                            imageCounter = 0;
-                        }
-                        images[imageCounter].style.display = 'block';
-                    }, 500);
-                </script>
+                <my-slider>
+                    <img src="images/fresno1.png" alt="Fresno, CA"/>
+                    <img src="images/fresno2.JPG" alt="Fresno, CA"/>
+                    <img src="images/fresno3.JPG" alt="Fresno, CA"/>
+                </my-slider>
 
                 <!-- Component code example -->
-                <div class="highlight"><code class="html"><div class="my_slider">Slider!</div></code></div>
+                <div class="highlight"><code class="html"><my-slider>
+                    <img src="images/fresno1.png" alt="Fresno, CA"/>
+                    <img src="images/fresno2.JPG" alt="Fresno, CA"/>
+                    <img src="images/fresno3.JPG" alt="Fresno, CA"/>
+                </my-slider></code></div>
 
             </div>
         </div>
