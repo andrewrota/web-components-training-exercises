@@ -42,7 +42,13 @@
 <script>
     var createElement = function(tagName, templateId, basePrototype) {
         basePrototype = basePrototype || HTMLElement.prototype;
-        var template = document.currentScript.ownerDocument.getElementById(templateId).content;
+        var template;
+        if (document._currentScript) {
+            template = document._currentScript.ownerDocument.getElementById(templateId).content;
+        } else {
+            template = document.currentScript.ownerDocument.getElementById(templateId).content;
+
+        }
         var customElementPrototype = Object.create(basePrototype);
         customElementPrototype.createdCallback = function() {
             var shadowRoot = this.createShadowRoot();
