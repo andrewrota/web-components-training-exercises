@@ -1,15 +1,16 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Web Components Styleguide</title>
-    <!-- Bootstrap core CSS -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Web Components Styleguide</title>
+        <!-- Bootstrap core CSS -->
 
-    <link href="vendor/bootstrap.min.css" rel="stylesheet">
+        <link href="vendor/bootstrap.min.css" rel="stylesheet">
+        <link href="vendor/docs.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+        <link rel="import" href="components/my-button/index.html"/>
 
-    <link href="vendor/docs.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
     <link rel="import" href="components/very-cool-hello-badge/index.html"/>
     <style>.navbar-brand { font-size: 250%; line-height: 1.2; margin: 20px 0; }</style>
     <script src="webcomponents.js"></script>
@@ -57,10 +58,10 @@
                 <!-- Component title -->
                 <h2 id="button">Button</h2>
                 <!-- Component code -->
-                <div class="my_button">Button!</div>
+                <my-button>Button!!</my-button>
 
                 <!-- Component code example -->
-                <div class="highlight"><code class="html"><div class="my_button">Button!</div></code></div>
+                <div class="highlight"><code class="html"><my-button>Button!!</my-button></code></div>
 
                 <!-- Slider Component -->
 
@@ -143,7 +144,6 @@ codeNodes.forEach(function(el) { hljs.highlightBlock(el); });
 
 <script src="vendor/bootstrap.min.js"></script>
 
-<link rel="import" href="components/my-button/index.html"/>
 
 
 <script src="vendor/docs.min.js"></script>
@@ -151,6 +151,7 @@ codeNodes.forEach(function(el) { hljs.highlightBlock(el); });
 
 
 
+<script src="foo.js"></script>
 
 </body>
 </html>
