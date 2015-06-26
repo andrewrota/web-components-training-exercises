@@ -9,18 +9,27 @@
         var currentScript = document._currentScript ? document._currentScript : document.currentScript;
         var template = currentScript.ownerDocument.querySelector('template').content;
         var customElementPrototype = Object.create(basePrototype);
+        customElementPrototype.stop = function() {
+            window.clearInterval(this._intervalId);
+        };
         customElementPrototype.setLoop = function(images) {
             var imageCounter = 0;
-            if(this.intervalId) {window.clearInterval(this.intervalId); }
-            this.intervalId = window.setInterval(function() {
-                images[imageCounter].style.display = 'none';
-                if(imageCounter < images.length -1) {
-                    imageCounter++;
-                } else {
-                    imageCounter = 0;
-                }
-                images[imageCounter].style.display = 'block';
-            }, this.interval);
+            if(this._intervalId) {window.clearInterval(this._intervalId); }
+            function loop() {
+                    images[imageCounter].style.display = 'none';
+                    if(imageCounter < images.length -1) {
+                        imageCounter++;
+                    } else {
+                        imageCounter = 0;
+                    }
+                    images[imageCounter].style.display = 'block';
+
+                    var imageChangeEvent = new CustomEvent('image-change', { 'detail': {imageIndex: imageCounter, image: images[imageCounter]}});
+
+                    this.dispatchEvent(imageChangeEvent);
+
+            }
+            this._intervalId = window.setInterval(loop.bind(this), this.interval);
         };
         customElementPrototype.createdCallback = function() {
             this.interval = 500;
